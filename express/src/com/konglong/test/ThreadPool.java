@@ -10,7 +10,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 
 
-@SuppressWarnings("unchecked")
 public class ThreadPool extends ThreadGroup {
 
     /**
@@ -82,7 +81,8 @@ public class ThreadPool extends ThreadGroup {
 	 */
 	private class WorkThread extends Thread{
 	 	     
-	    private int count;
+	    @SuppressWarnings("unused")
+		private int count;
 	    public WorkThread(){}
 			       
 		public void run(){
