@@ -1,7 +1,9 @@
 package test;
  
     import java.util.logging.Level;
-    import java.util.logging.Logger;
+import java.util.logging.Logger;
+
+import com.sun.net.ssl.internal.www.protocol.https.Handler;
  
     /**
      * Java program to demonstrate How ClassLoader works in Java,
@@ -18,11 +20,11 @@ package test;
                 System.out.println("ClassLoaderTest.getClass().getClassLoader() : "
                                      + ClassLoaderTest.class.getClassLoader());
  
-                //trying to explicitly load this class again using Extension class loader
                 Class.forName("test.ClassLoaderTest", true
                                 ,  ClassLoaderTest.class.getClassLoader().getParent());
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(ClassLoaderTest.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getGlobal();
             }
         }
  
