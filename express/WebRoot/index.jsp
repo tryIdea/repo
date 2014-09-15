@@ -25,15 +25,13 @@
 <body>
 	This is my JSP page.
 	<br>
-	<a href="javascript:void window.open()">open a new window!</a>
+	<a href="javascript:void window.open()" target="self">open a new window!</a>
 	<script type="text/javascript">
 		(function testUndefinded(i,a) {
 			alert(i + a);
-			
+			window.showModalDialog();
 			var obj = Object.create({x:1});
-			alert(obj.x);
 		})(1,9);
-//		testUndefinded(4);
 	</script>
 </body>
 </html>
