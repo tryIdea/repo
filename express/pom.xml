@@ -5,4 +5,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>express</name>
   <description>a practice</description>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.tomcat.maven</groupId>
+  			<artifactId>tomcat7-maven-plugin</artifactId>
+  			<version>2.2</version>
+  			<configuration></configuration>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
