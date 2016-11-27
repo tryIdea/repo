@@ -40,6 +40,7 @@ groups username
 ####喜欢的zsh主题
 jonathan.zsh-theme
 smt.zsh-theme
+rkj-repos.zsh-theme
 
 ####设置当前用户使用 zsh
 chsh -s /bin/zsh
