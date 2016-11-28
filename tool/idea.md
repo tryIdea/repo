@@ -6,6 +6,12 @@
 > * ：double click Alt
 > * :  double click shift
 > * find action :  Ctrl  + shift + a  
+quick definition  ctrl + shift + i
+File Structure  ctrl + o
+quick Documentation  ctrl + shift + 空格
+Show Intention Actions  alt + enter
+括号之间跳转 ： ctrl + shift + p
+查询快捷键 :　ctrl+shift+A
 
 ####常用插件
 > * FindBugs for IntelliJ IDEA
@@ -19,3 +25,5 @@
 > * codeGlance
 > * ideaVim
 > * jUnitGenerator2.0
+> * ASM ByteCode  查看类文件生成的字节码
+> * lombok plugin
