@@ -51,4 +51,7 @@ Linux系统为Ubuntu
 - /etc/init.d/apache2 restart
 - /etc/init.d/apache2 stop
 
+####后台执行任务，即使关闭窗口
+nohup sh importCcInfo.sh > /usr/local/apache-tomcat-7.0.63/logs/nohup.out 2>& 1 &
+
 to be a better man!
