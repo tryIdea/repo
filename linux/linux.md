@@ -54,4 +54,10 @@ Linux系统为Ubuntu
 ####后台执行任务，即使关闭窗口
 nohup sh importCcInfo.sh > /usr/local/apache-tomcat-7.0.63/logs/nohup.out 2>& 1 &
 
+#### 查看命令行快捷键
+man readline
+
+#### 查看ascii码表
+man ascii
+
 to be a better man!

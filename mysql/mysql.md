@@ -204,3 +204,44 @@ mysqldump -v -uroot -p cloudEyes --where "1=1 limit 3" --lock-all-tables > worko
 　　mysql> UPDATE user SET password=PASSWORD("new password") WHERE user='root';
 
 　　mysql> FLUSH PRIVILEGES;
+
+####查询缓存
+RESET QUERY CACHE  清空查询缓存 ？
+FLUSH QUERY CACHE
+FLUSH TABLES
+SET SESSION query_cache_type=off
+SELECT SQL_NO_CACHE count(1) from t_work_order;  指定当前语句不缓存
+SELECT SQL_NO_CACHE count(*), now() from t_work_order;
+count(*)   count(id)  count(1)
+
+####mycli History and Search
+ctrl+r
+
+#### 查看sql的查询计划
+1. set profiling=1
+2. show profiles
+3. show profile for [all] query id
+【注：这里显示的单位精确至微秒，精确到微秒。1微秒=10的-6次方秒=0.000001秒】
+
+#### 排除mysql内部缓存对于索引调优的影响，首先在当前会话里即时设置全局缓存
+- set global query_cache_size=1024*1024*16;     //分配设置缓存大小 
+- set global query_cache_type=1;                          //0表示OFF，1表示ON
+
+#### 以下情况无法缓存其记录集
+- 查询语句中加了SQL_NO_CACHE参数； 
+- 查询语句中含有获得值的函数，包涵自定义函数，如：CURDATE()、GET_LOCK()、RAND()、CONVERT_TZ等；
+- 对系统数据库的查询：mysql、information_schema
+- 查询语句中使用SESSION级别变量或存储过程中的局部变量；
+- 查询语句中使用了LOCK  IN SHARE MODE、FOR UPDATE的语句
+- 查询语句中类似SELECT …INTO 导出数据的语句；
+- 事务隔离级别为：Serializable情况下，所有查询语句都不能缓存；至于什么是事务隔离级别
+- 对临时表的查询操作；
+- 存在警告信息的查询语句；
+- 不涉及任何表或视图的查询语句；
+- 某用户只有列级别权限的查询语句；
+对于大数据并发访问，几乎没有什么命中率，所以DBA一般都会关闭缓存
+
+
+
+
+
