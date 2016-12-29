@@ -12,6 +12,11 @@ quick Documentation  ctrl + shift + 空格
 Show Intention Actions  alt + enter
 括号之间跳转 ： ctrl + shift + p
 查询快捷键 :　ctrl+shift+A
+访问最近编辑的文件:ctrl+shift+E
+找到最近访问的文件:ctrl+E
+访问历史粘贴板 : ctrl+shift+V
+Smart Step Into : shift+F7
+
 
 ####常用插件
 > * FindBugs for IntelliJ IDEA
@@ -27,3 +32,4 @@ Show Intention Actions  alt + enter
 > * jUnitGenerator2.0
 > * ASM ByteCode  查看类文件生成的字节码
 > * lombok plugin
+> * pmd
