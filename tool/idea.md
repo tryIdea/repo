@@ -16,6 +16,10 @@
 > * 重构 ：Ctrl+Shift+Alt+T
 > * 隐藏所有工具窗口 ：Ctrl+Shift+F12
 > * 后缀自动补全功能(Postfix Completion) ：users.for+Tab | user.getBirthday().var+Tab
+> * 访问最近编辑的文件:ctrl+shift+E
+> * 找到最近访问的文件:ctrl+E
+> * 访问历史粘贴板 : ctrl+shift+V
+> * Smart Step Into : shift+F7
 
 ####常用插件
 > * FindBugs for IntelliJ IDEA
@@ -32,3 +36,4 @@
 > * ASM ByteCode  查看类文件生成的字节码
 > * lombok plugin
 > * key promoter
+> * pmd
