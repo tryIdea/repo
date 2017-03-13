@@ -62,4 +62,25 @@ man readline
 #### 查看ascii码表
 man ascii
 
+#### 快速定位文件
+updatedb
+locate <file>
+
+#### 查看端口占用
+lsof -i:8088
+
+#### 追加环境变量
+echo "export PATH=$PATH:/root" >> /etc/rc.local
+
+#### 获取字符串的MD5值
+echo -n '-KavlU'|md5sum|cut -d ' ' -f 1
+
+#### 杭州天气
+> 9度，西北风1级，空气良89，相对温度73%
+> ![screenshot](http://image.jpg)
+> ###### 10点20分发布 [天气](http://www.thinkpage.cn/) 
+
 to be a better man!
+如果简历中大量堆砌了流行的技术概念（如 React, MVVM, ES6 等等）而没有具体详细地指出这些技术在项目中的落实情况，那么就可以把这些忽略掉了。
+专精领域
+自我介绍，工作经历介绍

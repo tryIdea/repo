@@ -7,6 +7,9 @@
 - 在起始括号和结尾括号间切换 <kbd>Ctrl + M</kbd>
 - 选择括号间的内容 <kbd>Ctrl + Shift + M</kbd>
 - 删除当前整行内容 <kbd> Ctrl + Shift + K </kbd>
+- 粘贴并复制格式: <kbd>ctrl+shift+v</kbd>
+- 选择括号内的内容: <kbd>ctrl+shift+m</kbd>
+- 用标签包裹行或选中项: <kbd>alt+shift+w</kbd>
 
 git插件介绍
 ======================================================================
