@@ -20,4 +20,18 @@ git add database/alter.sql 《===》  git reset HEAD database/alter.sql
 git stash  <===>  git stash pop stash@{0}
 修改pom.xml文件 《===》 git checkout pom.xml
 
+#### 更改默认的编辑器
+git config –global core.editor vim
+
+#### 修改最后一次commit的信息
+git commit --amend
+
+#### Git diff图形化工具 bcompare配置
+git difftool --tool-help
+git config --global diff.tool bc3
+git config --global difftool.bc3.path "/usr/bin/bcompare"
+
+#### 每次拉取和推送的时候不用每次输入密码的命令行
+git config credential.helper osxkeychain sourcetree
+
 
