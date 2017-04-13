@@ -166,6 +166,16 @@ WHERE
 			) AS temp
 )
 
+#################有效率的删除重复数据
+DELETE t from t_cc_info as t INNER JOIN (SELECT
+			max(id) id
+		FROM
+			t_cc_info
+		GROUP BY
+			cc_id
+		HAVING
+			count(*) > 1) as ids on (t.id = ids.id);
+
 #### 获取数据库中所有表的结构和前三条记录
 mysqldump -v -uroot -p cloudEyes --where "1=1 limit 3" --lock-all-tables > workorder_limit_3.sql;
 
@@ -240,6 +250,18 @@ ctrl+r
 - 不涉及任何表或视图的查询语句；
 - 某用户只有列级别权限的查询语句；
 对于大数据并发访问，几乎没有什么命中率，所以DBA一般都会关闭缓存
+
+#### 创建唯一索引
+CREATE UNIQUE INDEX uk_cc_id ON t_cc_info (cc_id)
+
+#### sql常见问题
+- limit分页优化两种方式1、left join 查询  2、将上一页的最大值当成参数作为查询条件 
+- 隐式转换
+- 函数作用于表字段，索引失效
+- MySQL不能利用索引进行混合排序
+
+
+
 
 
 

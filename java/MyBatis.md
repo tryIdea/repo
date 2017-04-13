@@ -11,3 +11,7 @@ useCache默认为true，表示会将本条语句的结果进行二级缓存。
 flushCache默认为true，表示任何时候语句被调用，都会导致本地缓存和二级缓存被清空。
 
 useCache属性在该情况下没有。
+
+<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+  SELECT LAST_INSERT_ID()
+</selectKey>

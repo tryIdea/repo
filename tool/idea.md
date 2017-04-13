@@ -37,3 +37,6 @@
 > * lombok plugin
 > * key promoter
 > * pmd
+> * Statistic
+> * error-prone java compiler
+> * Grep Console
