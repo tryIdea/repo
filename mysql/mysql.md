@@ -260,6 +260,20 @@ CREATE UNIQUE INDEX uk_cc_id ON t_cc_info (cc_id)
 - 函数作用于表字段，索引失效
 - MySQL不能利用索引进行混合排序
 
+#### help_topic
+SELECT * from mysql.help_topic;
+
+#### 给某一张表添加一个列
+alter table app_user add starLevel INT(11) NULL default 6;
+
+#### 给user表的username添加唯一约束
+Alter table user add unique(username);
+
+#### 更改app_activity表中digest的字段,允许为空
+ALTER TABLE app_activity MODIFY digest VARCHAR(255) null;
+
+
+
 
 
 

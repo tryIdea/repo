@@ -20,6 +20,7 @@
 > * 找到最近访问的文件:ctrl+E
 > * 访问历史粘贴板 : ctrl+shift+V
 > * Smart Step Into : shift+F7
+> * 方法之间快速跳转 : ctrl + shift+ 箭头 
 
 ####常用插件
 > * FindBugs for IntelliJ IDEA

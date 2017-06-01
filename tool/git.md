@@ -30,7 +30,7 @@ git config –global core.editor vim
 git commit --amend
 
 #### Git diff图形化工具 bcompare配置
-git difftool --tool-help
+git difftool --tool-help  //查看可用的difftool
 git config --global diff.tool bc3
 git config --global difftool.bc3.path "/usr/bin/bcompare"
 

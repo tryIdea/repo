@@ -80,6 +80,10 @@ echo -n '-KavlU'|md5sum|cut -d ' ' -f 1
 > ![screenshot](http://image.jpg)
 > ###### 10点20分发布 [天气](http://www.thinkpage.cn/) 
 
+#### 查看指定时间段的日志
+sed -n '/2017-04-27 07:[0-9][0-9]:[0-9][0-9]/,/2017-04-27 08:[0-9][0-9]:[0-9][0-9]/p' catalina.out
+
+
 to be a better man!
 如果简历中大量堆砌了流行的技术概念（如 React, MVVM, ES6 等等）而没有具体详细地指出这些技术在项目中的落实情况，那么就可以把这些忽略掉了。
 专精领域
