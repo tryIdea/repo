@@ -20,6 +20,9 @@ For CentOS/RHEL 6.*:
 - 回到上一个工作目录： cd -
 - stat：文件信息
 - file：确定文件类型
+- cat /etc/issue : 发行版本信息
+- cat /proc/version : 正在运行的内核版本
+- echo "export PATH=$PATH:/usr/local/git/bin" >> /etc/bashrc : 添加环境变量
 
 ####几个特殊的命令
 cmatrix    aafire  sl   bb
@@ -55,6 +58,9 @@ Linux系统为Ubuntu
 nohup sh importCcInfo.sh > /usr/local/apache-tomcat-7.0.63/logs/nohup.out 2>& 1 &
 
 nohup command >/dev/null 2>&1 &
+
+#### cp命令
+\cp -rf /data/wwwroot/app/MH20170211_Java/target/dating/* /data/wwwroot/default/
 
 #### 查看命令行快捷键
 man readline
