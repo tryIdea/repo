@@ -60,5 +60,8 @@ git:x:1001:1001:,,,:/home/git:/bin/bash
 改为：
 git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
 
+#### copy
+ssh-copy-id user@123.45.56.78
+cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 
 

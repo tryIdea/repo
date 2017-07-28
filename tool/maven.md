@@ -2,9 +2,11 @@
 mvn dependency:sources 
 mvn dependency:sources -DdownloadSources=true -DdownloadJavadocs=true
 
-#### 打包war
-mvn package
+#### 查看所有依赖树
 
+maven dependency:tree
+
+mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>
 
 ####maven jetty配置
 <!-- maven的jetty服务器插件 -->  

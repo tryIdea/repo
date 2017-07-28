@@ -272,6 +272,31 @@ Alter table user add unique(username);
 #### 更改app_activity表中digest的字段,允许为空
 ALTER TABLE app_activity MODIFY digest VARCHAR(255) null;
 
+#### 发生死锁时，可能需要用到的sql
+
+- 查看隔离级别
+select @@tx_isolation;
+
+- 查看当前的事务
+SELECT * FROM information_schema.INNODB_TRX;
+
+- 查看当前锁定的事务
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
+
+- 查看当前等锁的事务
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS; 
+
+- 查看事务是否自动提交
+select @@autocommit;
+
+- 查询进程（如果您有SUPER权限，您可以看到所有线程。否则，您只能看到您自己的线程）
+show processlist;
+
+- 查询是否锁表
+show OPEN TABLES where In_use > 0;
+
+
+
 
 
 
