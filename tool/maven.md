@@ -3,7 +3,7 @@ mvn dependency:sources
 mvn dependency:sources -DdownloadSources=true -DdownloadJavadocs=true
 
 #### 打包war
-mvn package
+mvn dependency:tree
 
 
 ####maven jetty配置

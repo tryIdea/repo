@@ -66,8 +66,9 @@ man ascii
 updatedb
 locate <file>
 
-#### 查看端口占用
+#### 查看端口占用,端口是否开放
 lsof -i:8088
+start /min telnet 119.75.216.20 80
 
 #### 追加环境变量
 echo "export PATH=$PATH:/root" >> /etc/rc.local

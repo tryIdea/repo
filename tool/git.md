@@ -36,3 +36,8 @@ git config --global difftool.bc3.path "/usr/bin/bcompare"
 
 #### 每次拉取和推送的时候不用每次输入密码的命令行
 git config credential.helper osxkeychain sourcetree
+
+#### git-commit-template
+curl https://gist.githubusercontent.com/yulijia/fe2522fe138b6ed41ff4/raw/5fa0007d1863f70cf4631f2dc1513c8676cd4ab8/.git-commit-template.txt >> ~/.git-commit-template.txt
+git config --global commit.template ~/.git-commit-template.txt
+
