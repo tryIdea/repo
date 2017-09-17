@@ -20,6 +20,9 @@ For CentOS/RHEL 6.*:
 - 回到上一个工作目录： cd -
 - stat：文件信息
 - file：确定文件类型
+- cat /etc/issue : 发行版本信息
+- cat /proc/version : 正在运行的内核版本
+- echo "export PATH=$PATH:/usr/local/git/bin" >> /etc/bashrc : 添加环境变量
 
 ####几个特殊的命令
 cmatrix    aafire  sl   bb
@@ -56,6 +59,9 @@ nohup sh importCcInfo.sh > /usr/local/apache-tomcat-7.0.63/logs/nohup.out 2>& 1 
 
 nohup command >/dev/null 2>&1 &
 
+#### cp命令
+\cp -rf /data/wwwroot/app/MH20170211_Java/target/dating/* /data/wwwroot/default/
+
 #### 查看命令行快捷键
 man readline
 
@@ -80,6 +86,10 @@ echo -n '-KavlU'|md5sum|cut -d ' ' -f 1
 > 9度，西北风1级，空气良89，相对温度73%
 > ![screenshot](http://image.jpg)
 > ###### 10点20分发布 [天气](http://www.thinkpage.cn/) 
+
+#### 查看指定时间段的日志
+sed -n '/2017-04-27 07:[0-9][0-9]:[0-9][0-9]/,/2017-04-27 08:[0-9][0-9]:[0-9][0-9]/p' catalina.out
+
 
 to be a better man!
 如果简历中大量堆砌了流行的技术概念（如 React, MVVM, ES6 等等）而没有具体详细地指出这些技术在项目中的落实情况，那么就可以把这些忽略掉了。

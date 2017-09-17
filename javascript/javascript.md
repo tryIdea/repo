@@ -31,3 +31,22 @@ $.parseJSON();
 
 ####console日志输出格式
 [LOG][Flowjs][2016-03-06 22:30:00] >>> 步骤结束：绑定传入参数
+
+#### swith case 语法
+```javascript
+switch(value)
+          {
+          case 0:
+            result = "不通过"
+            break;
+          case 1:
+              result = "通过"
+              break;
+          case 2:
+              result = "拒绝上线"
+              break;
+          default:
+            result = "验收中"
+          }
+
+```

@@ -167,6 +167,16 @@ WHERE
 			) AS temp
 )
 
+#################有效率的删除重复数据
+DELETE t from t_cc_info as t INNER JOIN (SELECT
+			max(id) id
+		FROM
+			t_cc_info
+		GROUP BY
+			cc_id
+		HAVING
+			count(*) > 1) as ids on (t.id = ids.id);
+
 #### 获取数据库中所有表的结构和前三条记录
 mysqldump -v -uroot -p cloudEyes --where "1=1 limit 3" --lock-all-tables > workorder_limit_3.sql;
 
@@ -241,6 +251,57 @@ ctrl+r
 - 不涉及任何表或视图的查询语句；
 - 某用户只有列级别权限的查询语句；
 对于大数据并发访问，几乎没有什么命中率，所以DBA一般都会关闭缓存
+
+#### 创建唯一索引
+CREATE UNIQUE INDEX uk_cc_id ON t_cc_info (cc_id)
+
+#### sql常见问题
+- limit分页优化两种方式1、left join 查询  2、将上一页的最大值当成参数作为查询条件 
+- 隐式转换
+- 函数作用于表字段，索引失效
+- MySQL不能利用索引进行混合排序
+
+#### help_topic
+SELECT * from mysql.help_topic;
+
+#### 给某一张表添加一个列
+alter table app_user add starLevel INT(11) NULL default 6;
+
+#### 给user表的username添加唯一约束
+Alter table user add unique(username);
+
+#### 更改app_activity表中digest的字段,允许为空
+ALTER TABLE app_activity MODIFY digest VARCHAR(255) null;
+
+#### 发生死锁时，可能需要用到的sql
+
+- 查看隔离级别
+select @@tx_isolation;
+
+- 查看当前的事务
+SELECT * FROM information_schema.INNODB_TRX;
+
+- 查看当前锁定的事务
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
+
+- 查看当前等锁的事务
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS; 
+
+- 查看事务是否自动提交
+select @@autocommit;
+
+- 查询进程（如果您有SUPER权限，您可以看到所有线程。否则，您只能看到您自己的线程）
+show processlist;
+
+- 查询是否锁表
+show OPEN TABLES where In_use > 0;
+
+
+
+
+
+
+
 
 
 
