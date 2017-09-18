@@ -25,7 +25,7 @@
 ####常用插件
 > * FindBugs for IntelliJ IDEA
 > * generate serialversionuid
-> * mybatis——ibatis/mybatis mini-plugin
+> * mybatis mini-plugin
 > * Maven Helper
 > * CheckStyle-IDEA
 > * Jrebel

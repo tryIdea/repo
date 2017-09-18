@@ -3,7 +3,6 @@ mvn dependency:sources
 mvn dependency:sources -DdownloadSources=true -DdownloadJavadocs=true
 
 #### 查看所有依赖树
-
 maven dependency:tree
 
 mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>

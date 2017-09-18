@@ -39,6 +39,7 @@
 *	mysql -uroot -p mydb
 #### 查看MySQL的当前用户 :
 	SELECT USER();
+	show global variables like 'port';
 #### 查看所有用户 :
 	SELECT user,host,password FROM mysql.user;
 

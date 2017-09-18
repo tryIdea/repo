@@ -34,6 +34,10 @@ git config --global difftool.bc3.path "/usr/bin/bcompare"
 #### 每次拉取和推送的时候不用每次输入密码的命令行
 git config credential.helper osxkeychain sourcetree
 
+#### git-commit-template
+curl https://gist.githubusercontent.com/yulijia/fe2522fe138b6ed41ff4/raw/5fa0007d1863f70cf4631f2dc1513c8676cd4ab8/.git-commit-template.txt >> ~/.git-commit-template.txt
+git config --global commit.template ~/.git-commit-template.txt
+
 #### 测试SSH连接
 ssh -T git@github.com
 
@@ -55,6 +59,3 @@ git rebase //用于将另一个分支的最新代码，全量合并到当前分�
 #### git仓库迁移
 git clone --bare git@10.63.64.10:/home/git/repo/alibaba/cloudEyes.git
 git push --mirror http://gitlab.alibaba-inc.com/yunque-group/yunque.git
-
-
-
