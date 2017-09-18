@@ -52,4 +52,9 @@ git tag //为代码的历史记录某个点打个标签，一般用来标记发�
 git cherry-pick //用于将另一个分支的某次提交代码，合并到当前分支。
 git rebase //用于将另一个分支的最新代码，全量合并到当前分支。
 
+#### git仓库迁移
+git clone --bare git@10.63.64.10:/home/git/repo/alibaba/cloudEyes.git
+git push --mirror http://gitlab.alibaba-inc.com/yunque-group/yunque.git
+
+
 
