@@ -307,6 +307,12 @@ show processlist;
 - 查询是否锁表
 show OPEN TABLES where In_use > 0;
 
+- 数据库转换后的语句
+explain extended
+show warnings;
+
+show full columns from t_faq_question_detail;
+
 
 
 
