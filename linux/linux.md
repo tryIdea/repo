@@ -27,8 +27,6 @@ For CentOS/RHEL 6.*:
 ####几个特殊的命令
 cmatrix    aafire  sl   bb
 
-
-
 ####Linux把用户加入某个组（不退出当前所属组 同时属于多个组） 
 usermod -a -G groupname username 
 
@@ -36,17 +34,20 @@ usermod -a -G groupname username
 groups username 
 
 ####想知道你的系统有几种shell，可以通过以下命令查看：
-```
-    cat /etc/shells
-```
+chsh -l
+cat /etc/shells
+
+####查看当前正在使用的shell：
+ps-p $$
+echo $0
+
+####设置当前用户使用 zsh
+chsh -s /bin/zsh。 #重启shell后生效
 
 ####喜欢的zsh主题
 jonathan.zsh-theme
 smt.zsh-theme
 rkj-repos.zsh-theme
-
-####设置当前用户使用 zsh
-chsh -s /bin/zsh
 
 #### 启动apache2 服务
 Linux系统为Ubuntu
@@ -90,6 +91,22 @@ echo -n '-KavlU'|md5sum|cut -d ' ' -f 1
 #### 查看指定时间段的日志
 sed -n '/2017-04-27 07:[0-9][0-9]:[0-9][0-9]/,/2017-04-27 08:[0-9][0-9]:[0-9][0-9]/p' catalina.out
 
+ brew install findutils -default-names
+ brew install gnu-sed --default-names
+ brew install gnu-tar --default-names
+ brew install gnu-which --default-names
+ brew install gnutls --default-names
+ brew install grep --default-names
+ brew install coreutils
+ brew install binutils
+ brew install diffutils
+ brew install gzip
+ brew install watch
+ brew install tmux 
+ brew install wget
+ brew install nmap
+ brew install gpg
+ brew install htop
 
 to be a better man!
 如果简历中大量堆砌了流行的技术概念（如 React, MVVM, ES6 等等）而没有具体详细地指出这些技术在项目中的落实情况，那么就可以把这些忽略掉了。

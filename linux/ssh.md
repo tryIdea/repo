@@ -64,4 +64,8 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
 ssh-copy-id user@123.45.56.78
 cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 
+复制到粘贴板
+cat ~/.ssh/id_rsa.pub | clip    # Windows
+cat ~/.ssh/id_rsa.pub | pbcopy  # MacOS
+
 

@@ -73,5 +73,13 @@ mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>
         </execution>
     </executions>
 </plugin>
+
+#### Maven查看当前生效的settings.xml
+mvn help:effective-settings
+mvn -X命令可以查看settings.xml文件的读取顺序
+mvn help:effective-pom用于查看当前生效的POM内容
+mvn help:system
+mvn help:describe -Dplugin=archetype
+mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-archetype-plugin
   
   

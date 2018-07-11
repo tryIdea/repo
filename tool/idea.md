@@ -41,3 +41,6 @@
 > * Statistic
 > * error-prone java compiler
 > * Grep Console
+> * activate-power-mode
+> * Background Image Plus
+

@@ -30,6 +30,9 @@ git config –global core.editor vim
 #### 修改最后一次commit的信息
 git commit --amend
 
+### 更新前一个commit的内容，保留提交日志不变
+git commit --amend --no-edit
+
 #### Git diff图形化工具 bcompare配置
 git difftool --tool-help  //查看可用的difftool
 git config --global diff.tool bc3
