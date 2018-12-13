@@ -69,8 +69,8 @@ If you are using multilanguage databases then you must specify the character set
 
 
 #### ubuntu下启动与停止mysql数据库
-- 启动：sudo /etc/init.d/mysql start 
-- 停止：sudo /etc/init.d/mysql stop 
+- 启动：sudo /etc/init.d/mysql start
+- 停止：sudo /etc/init.d/mysql stop
 - 重启：sudo /etc/init.d/mysql restart
 
 #### 允许ubuntu下mysql远程连接
@@ -235,11 +235,11 @@ ctrl+r
 【注：这里显示的单位精确至微秒，精确到微秒。1微秒=10的-6次方秒=0.000001秒】
 
 #### 排除mysql内部缓存对于索引调优的影响，首先在当前会话里即时设置全局缓存
-- set global query_cache_size=1024*1024*16;     //分配设置缓存大小 
+- set global query_cache_size=1024*1024*16;     //分配设置缓存大小
 - set global query_cache_type=1;                          //0表示OFF，1表示ON
 
 #### 以下情况无法缓存其记录集
-- 查询语句中加了SQL_NO_CACHE参数； 
+- 查询语句中加了SQL_NO_CACHE参数；
 - 查询语句中含有获得值的函数，包涵自定义函数，如：CURDATE()、GET_LOCK()、RAND()、CONVERT_TZ等；
 - 对系统数据库的查询：mysql、information_schema
 - 查询语句中使用SESSION级别变量或存储过程中的局部变量；
@@ -256,7 +256,7 @@ ctrl+r
 CREATE UNIQUE INDEX uk_cc_id ON t_cc_info (cc_id)
 
 #### sql常见问题
-- limit分页优化两种方式1、left join 查询  2、将上一页的最大值当成参数作为查询条件 
+- limit分页优化两种方式1、left join 查询  2、将上一页的最大值当成参数作为查询条件
 - 隐式转换
 - 函数作用于表字段，索引失效
 - MySQL不能利用索引进行混合排序
@@ -275,8 +275,8 @@ ALTER TABLE app_activity MODIFY digest VARCHAR(255) null;
 
 #### 设置事务隔离级别
 SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE}
-SELECT @@global.tx_isolation; 
-SELECT @@session.tx_isolation; 
+SELECT @@global.tx_isolation;
+SELECT @@session.tx_isolation;
 SELECT @@tx_isolation;
 
 set session transaction isolation level read uncommitted;
@@ -299,7 +299,7 @@ SELECT * FROM information_schema.INNODB_TRX;
 SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
 
 - 查看当前等锁的事务
-SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS; 
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS;
 
 - 查询进程（如果您有SUPER权限，您可以看到所有线程。否则，您只能看到您自己的线程）
 show processlist;

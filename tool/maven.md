@@ -1,50 +1,16 @@
 #### 下载项目依赖jar包的所有源码
-mvn dependency:sources 
+mvn dependency:sources
 mvn dependency:sources -DdownloadSources=true -DdownloadJavadocs=true
 
 #### 查看所有依赖树
-maven dependency:tree
-
+mvn dependency:tree
 mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>
-
-####maven jetty配置
-<!-- maven的jetty服务器插件 -->  
-    <plugins>  
-        <plugin>  
-          <groupId>org.mortbay.jetty</groupId>  
-          <artifactId>jetty-maven-plugin</artifactId>  
-          <configuration>  
-            <scanIntervalSeconds>10</scanIntervalSeconds>  
-            <webApp>  
-              <contextPath>/</contextPath>  
-            </webApp>  
-            <!-- 修改jetty的默认端口 -->  
-            <connectors>  
-               <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">  
-                  <port>80</port>  
-                  <maxIdleTime>60000</maxIdleTime>  
-               </connector>  
-            </connectors>  
-          </configuration>  
-        </plugin>  
-    </plugins>  
-
-
-#### 555
-    ```
-   export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
-   export MANPATH="/usr/local/man:$MANPATH"
-   export JAVA_HOME=/usr/local/bin/jdk1.8.0_65/
-   export PATH=$JAVA_HOME/bin:$PATH
-   export MAVEN_HOME=/usr/local/apache-maven-3.3.9
-   export PATH=$MAVEN_HOME/bin:$PATH
-   export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-  ```
 
 #### Maven安装第三方Jar包到本地仓库:maven-install-plugin
   mvn install:install-file -Dfile= -DgroupId= -DartifactId= -Dversion= -Dpackaging=
-  mvn install:install-file  -Dfile=e:\tmp\hijson\HiJson.jar  -DgroupId=com.kunlunsoft5  -DartifactId=Hijson -Dversion=1.0.0 -Dpackaging=jar  
-
+  mvn install:install-file  -Dfile=e:\tmp\hijson\HiJson.jar  -DgroupId=com.kunlunsoft5  -DartifactId=Hijson -Dversion=1.0.0 -Dpackaging=jar
+#### 发布到远程
+mvn deploy:deploy-file -Dfile=/Users/dufugang/project/train-service-api/lib/nls-service-sdk.jar  -DgroupId=com.alibaba.idst  -DartifactId=nls-service-sdk -Dversion=3.3.1 -Dpackaging=jar -DrepositoryId=rdc-releases -Durl=https://repo.rdc.aliyun.com/repository/28238-release-F3OKjA/
 #### Maven引入本地Jar包并打包进War包中
 
 <dependency>
@@ -54,26 +20,6 @@ mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>
     <systemPath>${project.basedir}/lib/*.jar</systemPath>
 </dependency>
 
-
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-dependency-plugin</artifactId>
-    <version>2.10</version>
-    <executions>
-        <execution>
-            <id>copy-dependencies</id>
-            <phase>compile</phase>
-            <goals>
-                <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-                <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/lib</outputDirectory>
-                <includeScope>system</includeScope>
-            </configuration>
-        </execution>
-    </executions>
-</plugin>
-
 #### Maven查看当前生效的settings.xml
 mvn help:effective-settings
 mvn -X命令可以查看settings.xml文件的读取顺序
@@ -81,5 +27,11 @@ mvn help:effective-pom用于查看当前生效的POM内容
 mvn help:system
 mvn help:describe -Dplugin=archetype
 mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-archetype-plugin
-  
-  
+
+#### maven生成项目骨架
+vn archetype:create-from-project
+cd target/generated-sources/archetype/
+mvn install
+mvn archetype:crawl
+mvn deploy(可选）
+mvn archetype:generate -DinteractiveMode=false -DarchetypeCatalog=internal,remote -DarchetypeRepository=https://repo.rdc.aliyun.com/repository/28238-snapshot-KOJx4y -DarchetypeGroupId=com.yunli.sca -DarchetypeArtifactId=sca-portal-archetype -DarchetypeVersion=1.0.0-SNAPSHOT -DgroupId=com.yunli -DartifactId=new-demo -Dversion=1.0.0-SNAPSHOT -Dgoals=compilemvn archetype:generate -DinteractiveMode=false -DarchetypeCatalog=internal,remote -DarchetypeRepository=https://repo.rdc.aliyun.com/repository/28238-snapshot-KOJx4y -DarchetypeGroupId=com.yunli.sca -DarchetypeArtifactId=sca-portal-archetype -DarchetypeVersion=1.0.0-SNAPSHOT -DgroupId=com.yunli -DartifactId=new-demo -Dversion=1.0.0-SNAPSHOT -Dgoals=compile

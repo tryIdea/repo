@@ -2,9 +2,9 @@
 
 #### 启动tomcat时开启gc日志
 在catalina.sh里添加如下变量即可
-`JAVA_OPTS='-verbose:gc -Xloggc:/home/ubuntu/logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps'` 
+`JAVA_OPTS='-verbose:gc -Xloggc:/home/ubuntu/logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps'`
 
-`JAVA_OPTS='-verbose:gc -Xloggc:/home/ubuntu/logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=100 -XX:GCLogFileSize=100K '` 
+`JAVA_OPTS='-verbose:gc -Xloggc:/home/ubuntu/logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=100 -XX:GCLogFileSize=100K '`
 
 #### JVM中哪些flag可以被jinfo动态修改
 java -XX:+PrintFlagsFinal -version|grep manageable
@@ -40,3 +40,6 @@ Native thread：本地线程没有足够内存可分配
 
 二、使用jstack 3331：查看线程情况
 
+#### docker里运行jinfo等命令
+docker run --cap-add=SYS_PTRACE -it bc336035e74e  /bin/bash
+docker run --security-opt seccomp:unconfined(不推荐）

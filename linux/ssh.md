@@ -1,5 +1,5 @@
 https://github.com/liaohuqiu/wechat-helper
-需要知道：git  ssh 
+需要知道：git  ssh
 
 
 #CentOS下搭建git服务器
@@ -10,7 +10,7 @@ sudo passwd git
 
 为git用户添加 sudo 权限
 - 修改'/etc/sudoers'
-- 增加'git  ALL=(ALL)  ALL' 
+- 增加'git  ALL=(ALL)  ALL'
 
 切换到git用户
 su git
@@ -65,6 +65,7 @@ ssh-copy-id user@123.45.56.78
 cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 
 复制到粘贴板
+ssh-keygen -t rsa -C 'xxx@xxx.com'
 cat ~/.ssh/id_rsa.pub | clip    # Windows
 cat ~/.ssh/id_rsa.pub | pbcopy  # MacOS
 
