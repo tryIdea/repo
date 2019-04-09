@@ -2,7 +2,7 @@ centos7
 =====================================
 ####sudoers 文件在哪，怎么修改？
 - 修改'/etc/sudoers'
-- 增加'debugger     ALL=(ALL)       ALL' 
+- 增加'debugger     ALL=(ALL)       ALL'
 
 ####XAMPP安装路径
 XAMPP will be installed to /opt/lampp
@@ -11,7 +11,7 @@ XAMPP will be installed to /opt/lampp
 Set up EPEL on CentOS 7
 	sudo yum install epel-release
 For CentOS/RHEL 6.*:
-	sudo rpm -Uvh http://mirrors.kernel.org/fedora-epel/6/i386/epel-release-6-8.noarch.rpm 
+	sudo rpm -Uvh http://mirrors.kernel.org/fedora-epel/6/i386/epel-release-6-8.noarch.rpm
 ####常用命令
 - w：当前登陆用户
 - 查看 man readline 中的”Key Bindings”这一节了解 Bash 中默认的组合键
@@ -27,11 +27,11 @@ For CentOS/RHEL 6.*:
 ####几个特殊的命令
 cmatrix    aafire  sl   bb
 
-####Linux把用户加入某个组（不退出当前所属组 同时属于多个组） 
-usermod -a -G groupname username 
+####Linux把用户加入某个组（不退出当前所属组 同时属于多个组）
+usermod -a -G groupname username
 
-####查看某用户所属组 
-groups username 
+####查看某用户所属组
+groups username
 
 ####想知道你的系统有几种shell，可以通过以下命令查看：
 chsh -l
@@ -86,10 +86,13 @@ echo -n '-KavlU'|md5sum|cut -d ' ' -f 1
 #### 杭州天气
 > 9度，西北风1级，空气良89，相对温度73%
 > ![screenshot](http://image.jpg)
-> ###### 10点20分发布 [天气](http://www.thinkpage.cn/) 
+> ###### 10点20分发布 [天气](http://www.thinkpage.cn/)
 
 #### 查看指定时间段的日志
 sed -n '/2017-04-27 07:[0-9][0-9]:[0-9][0-9]/,/2017-04-27 08:[0-9][0-9]:[0-9][0-9]/p' catalina.out
+
+#### 查看端口占用
+lsof -i tcp:8080
 
  brew install findutils -default-names
  brew install gnu-sed --default-names
@@ -102,7 +105,7 @@ sed -n '/2017-04-27 07:[0-9][0-9]:[0-9][0-9]/,/2017-04-27 08:[0-9][0-9]:[0-9][0-
  brew install diffutils
  brew install gzip
  brew install watch
- brew install tmux 
+ brew install tmux
  brew install wget
  brew install nmap
  brew install gpg

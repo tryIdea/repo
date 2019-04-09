@@ -313,7 +313,7 @@ show warnings;
 
 show full columns from t_faq_question_detail;
 
-
+show table status
 
 
 

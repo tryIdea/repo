@@ -69,4 +69,9 @@ ssh-keygen -t rsa -C 'xxx@xxx.com'
 cat ~/.ssh/id_rsa.pub | clip    # Windows
 cat ~/.ssh/id_rsa.pub | pbcopy  # MacOS
 
-
+#### How To SSH Into A Particular Directory On Linux
+ssh -t sk@192.168.225.22 'cd /home/sk/ostechnix ; bash'
+ssh -t sk@192.168.225.22 'cd /home/sk/ostechnix ; exec bash'
+ssh -t sk@192.168.225.22 'cd /home/sk/ostechnix && exec bash -l'
+ssh -t sk@192.168.225.22 'cd /home/sk/ostechnix && exec $SHELL'
+ssh -t sk@192.168.225.22 'cd /home/sk/ostechnix && uname -a && exec $SHELL'
